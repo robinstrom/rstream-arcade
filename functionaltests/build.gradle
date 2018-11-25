@@ -1,0 +1,20 @@
+dependencies {
+	testCompile "org.codehaus.groovy:groovy:2.4.1"
+	testCompile "org.spockframework:spock-core:1.1-groovy-2.4"
+	testCompile "org.codehaus.groovy.modules.http-builder:http-builder:0.7.1"
+}
+
+test {
+	systemProperties = System.properties
+
+	onlyIf {
+		project.hasProperty("functionalTests")
+	}
+
+	test {
+		testLogging {
+			showStandardStreams = true
+			exceptionFormat = 'full'
+		}
+	}
+}

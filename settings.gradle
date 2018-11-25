@@ -1,0 +1,4 @@
+rootProject.name = 'arcade'
+
+include 'backend'
+include 'functionaltests'
